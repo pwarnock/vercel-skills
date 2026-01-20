@@ -1,3 +1,6 @@
 [submodule "skills"]
 	path = skills
 	url = https://github.com/vercel-labs/agent-skills.git
+[submodule "browser-automation"]
+	path = browser-automation
+	url = https://github.com/vercel-labs/agent-browser.git
