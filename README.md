@@ -1,10 +1,10 @@
 # Vercel Skills
 
-Curated collection of Vercel agent skills packaged as a Claude Code plugin.
+Curated Vercel developer toolkit packaged as a Claude Code plugin.
 
 ## Included Skills
 
-This plugin contains three high-quality skills from the [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) repository:
+This plugin contains four high-quality skills from Vercel Labs repositories:
 
 ### 1. React Best Practices (`react-best-practices`)
 
@@ -39,6 +39,18 @@ Deploy applications to Vercel directly from conversations:
 - Deployment status tracking
 
 **Trigger phrases:** "deploy to Vercel", "create Vercel project", "set up Vercel deployment"
+
+### 4. Browser Automation (`agent-browser`)
+
+Headless browser automation for testing and data extraction:
+- Navigate pages and capture structure via accessibility tree
+- Fill forms, click elements, and automate interactions
+- Extract page content, attributes, and element state
+- Save/load browser sessions for authentication workflows
+- Screenshot capture, PDF generation, and video recording
+- Network monitoring and console message tracking
+
+**Trigger phrases:** "test the website", "automate browser", "fill out form automatically", "scrape web page"
 
 ## Installation
 
@@ -78,13 +90,19 @@ You: Deploy this Next.js app to Vercel
 Claude: [Triggers vercel-deploy-claimable skill and guides through deployment]
 ```
 
+**Automate browser testing:**
+```
+You: Test the login flow on the staging site
+Claude: [Triggers agent-browser skill and automates form filling, submission, and verification]
+```
+
 ## Updating Skills
 
-The skills are included as a git submodule pointing to the upstream Vercel repository. To update to the latest version:
+The skills are included as git submodules pointing to upstream Vercel repositories. To update to the latest version:
 
 ```bash
 cd ~/.claude/plugins/vercel-skills
-git submodule update --remote skills
+git submodule update --remote skills browser-automation
 ```
 
 ## Structure
@@ -92,19 +110,26 @@ git submodule update --remote skills
 ```
 vercel-skills/
 ├── .claude-plugin/
-│   └── plugin.json          # Plugin manifest
-├── skills/                  # Git submodule → vercel-labs/agent-skills
+│   └── plugin.json              # Plugin manifest
+├── skills/                      # Git submodule → vercel-labs/agent-skills
 │   ├── react-best-practices/
 │   ├── web-design-guidelines/
 │   └── vercel-deploy-claimable/
+├── browser-automation/          # Git submodule → vercel-labs/agent-browser
+│   └── skills/
+│       └── agent-browser/
 ├── commands/
-│   └── sync-skills.md       # Command to update skills
-└── README.md                # This file
+│   └── sync-skills.md           # Command to update skills
+└── README.md                    # This file
 ```
 
 ## Credits
 
-Skills are curated from the [Vercel Labs Agent Skills](https://github.com/vercel-labs/agent-skills) repository. All credit goes to the Vercel team and contributors.
+Skills are curated from Vercel Labs repositories:
+- [agent-skills](https://github.com/vercel-labs/agent-skills) - React best practices, web design guidelines, Vercel deployment
+- [agent-browser](https://github.com/vercel-labs/agent-browser) - Browser automation
+
+All credit goes to the Vercel team and contributors.
 
 ## License
 
