@@ -1,0 +1,13 @@
+{
+  "name": "vercel-skills",
+  "version": "0.1.0",
+  "description": "Curated collection of Vercel agent skills: React best practices, web design guidelines, and Vercel deployment",
+  "author": {
+    "name": "Peter Warnock",
+    "url": "https://github.com/pwarnock"
+  },
+  "homepage": "https://github.com/pwarnock/vercel-skills",
+  "repository": "https://github.com/pwarnock/vercel-skills",
+  "license": "MIT",
+  "keywords": ["vercel", "react", "nextjs", "design", "deployment", "best-practices"]
+}
